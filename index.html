@@ -71,16 +71,37 @@
       </div>
       <!-- storage card -->
       <div
-        class="p-8 rounded-lg text-white"
+        class="p-8 pb-16 rounded-lg text-white relative"
         style="background-color: hsl(228, 56%, 26%)"
       >
         <p>You’ve used <span class="font-bold">815 GB</span> of your storage</p>
-        <div class="w-full flex justify-between items-center">
-          <span class="text-sm font-bold">0 GB</span>
-          <span class="text-sm font-bold">1000 GB</span>
+        <!-- progress bar -->
+        <div
+          class="w-full h-4 rounded-full mt-4 mb-2 p-0.5"
+          style="background-color: hsl(229, 57%, 11%)"
+        >
+          <div
+            class="w-5/6 h-full rounded-full p-0.5"
+            style="
+              background-image: linear-gradient(
+                to right,
+                hsl(6, 100%, 80%),
+                hsl(335, 100%, 65%)
+              );
+            "
+          >
+            <div class="w-2 h-2 rounded-full bg-white ml-auto"></div>
+          </div>
         </div>
+        <!-- bar indicators -->
+        <div class="w-full flex justify-between items-center">
+          <span class="text-xs font-bold">0 GB</span>
+          <span class="text-xs font-bold">1000 GB</span>
+        </div>
+        <!-- GB LEFT -->
         <p
-          class="p-5 rounded-xl bg-white text-black text-center flex justify-evenly items-center font-bold"
+          class="w-52 h-20 px-4 rounded-xl bg-white text-black text-center flex justify-evenly items-center font-bold absolute -bottom-10 left-1/2"
+          style="-webkit-transform: translate(-50%); transform: translate(-50%)"
         >
           <span class="text-5xl">185</span>
           <span class="text-base pt-3 uppercase" style="color: hsl(0, 0%, 62%)"
