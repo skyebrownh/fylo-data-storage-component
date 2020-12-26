@@ -34,13 +34,32 @@
         background-repeat: no-repeat;
         background-size: cover;
       }
+
+      #gb-left {
+        -webkit-transform: translate(-50%);
+        transform: translate(-50%);
+      }
+
+      @media (min-width: 1024px) {
+        body {
+          background-image: url('./images/bg-desktop.png');
+          background-position: center;
+        }
+
+        #gb-left {
+          -webkit-transform: translate(0);
+          transform: translate(0);
+          left: auto;
+          right: 10%;
+        }
+      }
     </style>
   </head>
   <body class="w-screen h-screen flex justify-center items-center">
-    <main>
+    <main class="lg:flex lg:w-3/4 lg:items-end">
       <!-- Fylo card -->
       <div
-        class="p-8 rounded-lg mb-4"
+        class="p-8 rounded-lg mb-4 lg:pr-24 lg:mb-0 lg:mr-5 lg:w-72"
         style="
           background-color: hsl(228, 56%, 26%);
           border-top-right-radius: 5rem;
@@ -48,7 +67,7 @@
       >
         <img src="./images/logo.svg" alt="Fylo logo" />
         <!-- icons -->
-        <div class="flex mt-7 w-3/4 justify-between">
+        <div class="flex mt-7 w-3/4 justify-between lg:w-full">
           <img
             src="./images/icon-document.svg"
             alt="document icon"
@@ -71,7 +90,7 @@
       </div>
       <!-- storage card -->
       <div
-        class="p-8 pb-16 rounded-lg text-white relative"
+        class="p-8 pb-16 rounded-lg text-white relative lg:flex-1 lg:p-12"
         style="background-color: hsl(228, 56%, 26%)"
       >
         <p>You’ve used <span class="font-bold">815 GB</span> of your storage</p>
@@ -100,13 +119,22 @@
         </div>
         <!-- GB LEFT -->
         <p
-          class="w-52 h-20 px-4 rounded-xl bg-white text-black text-center flex justify-evenly items-center font-bold absolute -bottom-10 left-1/2"
-          style="-webkit-transform: translate(-50%); transform: translate(-50%)"
+          id="gb-left"
+          class="w-52 h-20 px-4 rounded-xl bg-white text-black text-center flex justify-evenly items-center font-bold absolute -bottom-10 left-1/2 lg:-top-12"
         >
           <span class="text-5xl">185</span>
           <span class="text-base pt-3 uppercase" style="color: hsl(0, 0%, 62%)"
             >GB Left</span
           >
+          <span
+            class="absolute w-0 h-0 hidden lg:block"
+            style="
+              border-top: 35px solid white;
+              border-left: 35px solid transparent;
+              right: 0;
+              bottom: -25px;
+            "
+          ></span>
         </p>
       </div>
     </main>
